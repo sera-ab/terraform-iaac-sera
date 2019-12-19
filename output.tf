@@ -26,3 +26,8 @@ output "wordpress_password" {
 output "wordpress" {
   value = aws_route53_record.www.name
 }
+
+
+output "IPs" {
+  value = aws_instance.web.*.public_ip
+}
