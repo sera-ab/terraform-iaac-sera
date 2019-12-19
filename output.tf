@@ -15,3 +15,4 @@ output "key_name" {
 
 output "username" {
   value = same_username
+}
