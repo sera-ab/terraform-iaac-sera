@@ -13,12 +13,16 @@ output "key_name" {
 }
 
 
-output "username" {
+output "wordpress_username" {
   value = "same_username"
 }
 
 
-output "password" {
+output "wordpress_password" {
   value = "same_password"
 }
 
+
+output "wordpress" {
+  value = aws_route53_record.www.name
+}
