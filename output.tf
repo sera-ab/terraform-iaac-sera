@@ -14,5 +14,11 @@ output "key_name" {
 
 
 output "username" {
-  value = same_username
+  value = "same_username"
 }
+
+
+output "password" {
+  value = "same_password"
+}
+
