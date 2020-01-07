@@ -1,6 +1,6 @@
 region            = "us-east-2"
 
-s3_bucket         = "wordpress-sera-2019-qa"      #Will be used to set backend.tf 
+s3_bucket         = "wordpress-huseyin-2019-qa"      #Will be used to set backend.tf 
 s3_folder_project = "application"                             #Will be used to set backend.tf 
 s3_folder_region  = "us-east-2"                      #Will be used to set backend.tf 
 s3_folder_type    = "state"                        #Will be used to set backend.tf 
@@ -11,7 +11,7 @@ environment       = "qa"
 terraform         = "true"
 
 
-name     = "qa-wordpress"
+name     = "dev-wordpress"
 cidr     = "10.20.0.0/16"
 
 az          = ["us-east-2a","us-east-2b","us-east-2c"]
