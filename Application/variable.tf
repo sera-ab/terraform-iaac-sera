@@ -2,4 +2,4 @@ variable "name" {
     default = "wordpress1"
 }
 
-variable "cdir" {}
+variable "cidr" {}
