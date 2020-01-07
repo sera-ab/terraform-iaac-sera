@@ -1,18 +1,18 @@
-module "wordpress1" {
+module "wordpress" {
   source = "terraform-aws-modules/vpc/aws"
 
   name = var.name
   cidr = var.cidr
 
-  azs             = [var.azs1, var.azs2, var.azs3]
-  private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
-
-  enable_nat_gateway = true
-  enable_vpn_gateway = true
+  azs             = [var.az[0], var.az[1], var.az[2]]
+  public_subnets  = [var.pub-cidr[0], var.pub-cidr[1],var.pub-cidr[2]]
+  private_subnets = [var.priv-cidr[0], var.priv-cidr[1], var.priv-cidr[2]]
+  
+  enable_nat_gateway = var.enable_nat_gateway
+  enable_vpn_gateway = var.enable_vpn_gateway
 
   tags = {
-    Terraform = "true"
-    Environment = "dev"
-  } 
+    Terraform = var.terraform
+    Environment = var.environment
+  }
 }

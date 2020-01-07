@@ -1,1 +1,0 @@
-# terraform-iaac-sera

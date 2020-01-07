@@ -3,7 +3,5 @@ resource "aws_instance" "web" {
   instance_type = var.instance_type 
 } 
 
-
-
 variable "instance_type" {} 
 variable "ami" {} 

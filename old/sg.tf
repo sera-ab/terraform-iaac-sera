@@ -1,7 +1,7 @@
-resource "aws_security_group" "allow_ssh" { 
-  name        = "allow_ssh" 
-  description = "Allow ssh inbound traffic" 
-  vpc_id      = "vpc-80910dfa" 
+resource "aws_security_group" "allow_tls" { 
+  name        = "allow_tls" 
+  description = "Allow SSH inbound traffic" 
+  vpc_id      = "vpc-010b2c2926bc8ee6c" 
 
   ingress { 
     from_port   = 22 
@@ -10,8 +10,7 @@ resource "aws_security_group" "allow_ssh" {
     cidr_blocks = ["0.0.0.0/0"]   
 
 } 
-
-egress { 
+  egress { 
     from_port       = 0 
     to_port         = 0 
     protocol        = "-1" 
