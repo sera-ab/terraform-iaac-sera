@@ -11,7 +11,7 @@ environment       = "qa"
 terraform         = "true"
 
 
-name     = "dev-wordpress"
+name     = "qa-wordpress"
 cidr     = "10.20.0.0/16"
 
 az          = ["us-east-2a","us-east-2b","us-east-2c"]
