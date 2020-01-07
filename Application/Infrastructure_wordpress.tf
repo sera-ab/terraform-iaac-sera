@@ -14,4 +14,4 @@ module "wordpress1" {
   tags = {
     Terraform = "true"
     Environment = "dev"
-  }
+  } 
