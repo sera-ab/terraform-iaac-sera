@@ -62,8 +62,8 @@ resource "aws_instance" "tower" {
               "sudo yum install -y epel-release",
               }
               }
-              
-              
+
+
     tags = {
     Name = "HelloWorld"
   }
