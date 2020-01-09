@@ -1,6 +1,6 @@
 #Go to Region us-east-2
 provider "aws" { 
-    region = "us-east-2" 
+    region = "us-east-1" 
 } 
 
 #Search for Ubuntu Latest with the owner
@@ -8,7 +8,7 @@ data "aws_ami" "ubuntu" {
     filter { 
         name = "root-device-type" 
         values = ["ebs"] 
-  } 
+        } 
 
 
     most_recent = true 
