@@ -61,14 +61,10 @@ resource "aws_instance" "tower" {
           inline = [
               "sudo yum install -y epel-release",
               }
-              }
-
-
     tags = {
     Name = "HelloWorld"
   }
 }
-
 
 
 resource "aws_route53_record" "www" {
