@@ -14,9 +14,8 @@
 #solution:
 
 #Go to Region us-east-1
-provider "aws" { 
-    region = "us-east-1" 
-} 
+#provider "aws" { 
+    #region = "us-east-1
 
 #Search for centos Latest with the owner
 data "aws_ami" "centos" { 
@@ -44,15 +43,15 @@ resource "aws_key_pair" "$towerkey" {
   public_key = "file(var.key_name_location)
 } 
 
-resource "aws_instance" "web" {
+resource "aws_instance" "tower" {
   ami           = data.aws_ami.centos.id
   instance_type = "t2.micro"
   key_name = aws_key_pair.towerkey.key_name
   provisioner "remote-exec" { 
     connection { 
-      host        = self.public_ip
-      type        = "ssh" 
-      user        = "centos" 
+      host = self.public_ip
+      type = "ssh" 
+      user = "centos" 
       private_key = file("~/.ssh/id_rsa")
       }
     inline = [ 
@@ -66,11 +65,10 @@ resource "aws_instance" "web" {
   }
 }
 
-
 resource "aws_route53_record" "www" { 
   zone_id = "Z11NPE9KYP328N" 
-  name    = "www.example.com" 
-  type    = "A" 
-  ttl     = "300" 
+  name = "www.example.com" 
+  type = "A" 
+  ttl = "300" 
   records = ["aws_instance.web.public_ip"] 
 } 
