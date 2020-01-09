@@ -24,6 +24,8 @@ data "aws_ami" "centos" {
         values = ["ebs"] 
         } 
 
+
+
     filter { 
     name = "centos7" 
     values = ["CentOS Linux 7 x86_64 HVM EBS *"] 
@@ -33,15 +35,21 @@ data "aws_ami" "centos" {
     owners = ["679593333241"] 
 }
 
+
+
 # Show the AMI Id
 output "centos" { 
     value = data.aws_ami.centos.id
 } 
 
+
+
 resource "aws_key_pair" "$towerkey" { 
   key_name   = "${var.key_name}" 
   public_key = "file(var.key_name_location)
 } 
+
+
 
 resource "aws_instance" "tower" {
   ami           = data.aws_ami.centos.id
@@ -60,10 +68,13 @@ resource "aws_instance" "tower" {
   } 
 
 
+
   tags = {
     Name = "HelloWorld"
   }
 }
+
+
 
 resource "aws_route53_record" "www" { 
   zone_id = "Z11NPE9KYP328N" 
