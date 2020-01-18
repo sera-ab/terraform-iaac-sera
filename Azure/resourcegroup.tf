@@ -1,4 +1,5 @@
-resource "azurerm_resource_group" "main" { 
-   name = "${var.prefix}-resources" 
-  location = "West US 2" 
+resource "azurerm_resource_group" "web_server_rg" { 
+  name = "web-rg" 
+  location = "westus2" 
+
 } 
